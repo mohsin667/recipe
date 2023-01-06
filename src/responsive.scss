@@ -99,7 +99,7 @@ p {
 
   .tablist {
     width: 140px;
-    height: 120px;
+    height: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,14 +107,27 @@ p {
     cursor: pointer;
     gap: 5px;
     position: relative;
+    
+    @include medium {
+      height: 100px;
+    }
+
+    @include default {
+      height: 120px;
+    }
 
     svg {
       font-size: 35px;
-      font-size: 50px;
+      @include small {
+        font-size: 50px;
+      }
     }
 
     span {
-      font-size: 18px
+      font-size: 14px;
+      @include small {
+        font-size: 18px;
+      }
     }
 
     &.active {
@@ -128,10 +141,17 @@ p {
       &::after {
         position: absolute;
         content: '';
-        border-top:20px solid #6fcb9f;
-        bottom: -20px;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
+        border-top:15px solid #6fcb9f;
+        bottom: -15px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        
+        @include medium {
+          border-top:20px solid #6fcb9f;
+          bottom: -20px;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+        }
       }
     }
 
@@ -140,15 +160,24 @@ p {
 
 .recipe_banner {
   background-color: #293e6b;
-  padding:60px  40px;
-  margin-top: 50px;
+  padding:20px;
+  margin-top: 30px;
   color: #fff;
   display: flex;
   margin-bottom: 70px;
   align-items: flex-start;
+  flex-direction: column-reverse;
+  
+  @include medium {
+    padding:60px  40px;
+    margin-top: 50px;
+    flex-direction: row;
+  }
 
   .left-col {
-    width: 50%;
+    @include medium {
+      width: 50%;
+    }
 
     .badge {
       background: #6fcb9f;
@@ -161,8 +190,11 @@ p {
     }
 
     h1 {
-      font-size: 45px;
+      font-size: 35px;
       margin-bottom: 0px;
+      @include medium {
+        font-size: 45px;
+      }
     }
   
     p {
@@ -193,7 +225,10 @@ p {
           margin-top: 0;
           display: flex;
           width: calc(50% - 20px);
-          font-size: 18px;
+          font-size: 16px;
+          @include medium {
+            font-size: 18px;
+          }
           svg {
             font-size: 18px;
           }
@@ -207,22 +242,34 @@ p {
 
   .right-col {
     padding-bottom: 20px;
-    padding-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    
+    @include medium {
+      padding-top: 50px;
+      width: 50%;
+    }
     
     .image-wrapper {
-      width: 350px;
-      height: 350px;
+      @include medium {
+        width: 300px;
+        height: 300px;
+      }
+      
+      @include default {
+        width: 350px;
+        height: 350px;
+      }
     }
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 100%;
+      @include medium {
+        border-radius: 100%;
+      }
     }
   }
 
@@ -230,13 +277,16 @@ p {
 
 .heading-line {
   padding: 10px 0;
-  font-size: 45px;
+  font-size: 35px;
   color: #6fcb9f;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
   flex-direction: column;
+  @include medium {
+    font-size: 45px;
+  }
 
   .input-wrapper {
     display: flex;
@@ -283,7 +333,15 @@ p {
     background-color: #fff;
     border-radius: 6px;
     overflow: hidden;
-    width: calc(100% / 4 - 20px );
+    width: 100%;
+    
+    @include small {
+      width: calc(100% / 2 - 20px );
+    }
+   
+    @include default {
+      width: calc(100% / 4 - 20px );
+    }
 
     .img-wrapper {
       display: flex;

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React,{useState} from 'react';
 import './App.scss';
 import Tabs from './components/Tabs';
 import RecipeLists from './components/RecipeLists';
@@ -20,4 +20,3 @@ function App() {
 }
 
 export default App;
-

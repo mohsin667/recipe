@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import {CiPizza} from 'react-icons/ci'
-import {GiFruitBowl , GiNoodles,GiCheckMark} from 'react-icons/gi'
+import {GiFruitBowl , GiNoodles, GiCheckMark} from 'react-icons/gi'
 import {MdOutlineIcecream} from 'react-icons/md'
 import { fetchTabData } from '../service'
 
@@ -10,22 +10,22 @@ function Tabs(props) {
     const [tabLabel,setTabLabel] = useState([
         {
             name:'Pizza',
-            renderHtml: () => <CiPizza />,
+            icon: <CiPizza />,
             id: "c0a7bcf3e996adbf1b3c31d74e07f2f1",
         },
         {
             name:'Noodles',
-            renderHtml: () => <GiNoodles />,
+            icon: <GiNoodles />,
             id:"bbfc1a248bd6fe277e35fe01027de91f",
         },
         {
             name:'Desert',
-            renderHtml: () => <GiFruitBowl />,
+            icon: <GiFruitBowl />,
             id: "bc865476ffe2b8a03fbe9aee2f739740",
         },
         {
             name:'Icecream',
-            renderHtml: () => <MdOutlineIcecream />,
+            icon: <MdOutlineIcecream />,
             id:"f74be31111bbf39de034ee9f58d6f329",
         },
     ])
@@ -52,7 +52,7 @@ function Tabs(props) {
         <div className="tabs">
             {tabLabel.map((item,index) => (
                 <div key={index}  onClick={()=> (handleTabClick(item.name,item.id),props.setLoader(true))} className={`tablist ${active === item.name ? 'active' : ""}`}>
-                    {item.renderHtml()}
+                    {item.icon}
                     <span>{item.name}</span>
                 </div>
             )
